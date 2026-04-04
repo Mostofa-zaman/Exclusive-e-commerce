@@ -1,4 +1,4 @@
-import { BsCart2 } from "react-icons/bs";
+import { BsCart2, BsThreeDotsVertical } from "react-icons/bs";
 import { FaRegHeart } from "react-icons/fa6";
 import { FaRegUser } from "react-icons/fa";
 import { IoIosSearch } from "react-icons/io";
@@ -14,6 +14,7 @@ import { IoEyeOutline } from "react-icons/io5";
 import { FaStar } from "react-icons/fa6";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { GrCart } from "react-icons/gr";
+import { LiaAngleRightSolid } from "react-icons/lia";
 
 import {
   FaCrown,
@@ -34,6 +35,8 @@ import {
   FaTabletAlt,
   FaCar,
   FaShoppingBag,
+
+  
 } from "react-icons/fa";
 
 import { GiDress, GiHighHeel, GiNecklace, GiSunglasses } from "react-icons/gi";
@@ -47,7 +50,9 @@ import { RiLinkedinLine } from "react-icons/ri";
 import { CiInstagram } from "react-icons/ci";
 import { CiTwitter } from "react-icons/ci";
 
+
 export const allIcon = {
+  
   navIcon: [
     { id: 1, icon: <FaRegHeart />, to: "/wishlist" },
     { id: 2, icon: <BsCart2 />, to: "/addtocart" },
@@ -55,6 +60,8 @@ export const allIcon = {
   ],
   searchIcon: <IoIosSearch />,
   send: <IoMdSend />,
+  righiangle:<LiaAngleRightSolid />,
+  threedots:<BsThreeDotsVertical />,
   socialLinks: [
     {
       id: 1,

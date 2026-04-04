@@ -7,7 +7,7 @@ const Navbar = () => {
   const { navIcon, searchIcon } = allIcon;
 
   return (
-    <nav className="pt-10 pb-4">
+    <nav className="pt-10 pb-4  border-b">
       <Container>
         <div className="flex items-center justify-between">
           <h6 className="text-xl font-bold">Exclusive</h6>
