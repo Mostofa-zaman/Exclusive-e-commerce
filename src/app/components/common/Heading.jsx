@@ -3,8 +3,8 @@ import Button2 from "../common/Button2";
 const Heading = ({title, description}) => {
   return (
     <div className="flex flex-col items-start gap-y-6">
-      <Button2 children={title} className="title16PXSemiBold" />
-      <h1 className="heading36PXBold">{description}</h1>
+      <Button2 children={title} className="text-[16px] font-semibold" />
+      <h1 className="text-[36px] font-bold">{description}</h1>
     </div>
   );
 };

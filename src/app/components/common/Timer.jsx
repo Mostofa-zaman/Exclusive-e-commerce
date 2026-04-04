@@ -34,9 +34,9 @@ const Timer = () => {
         const value = Object.values(time)[idx];
         return (
           <div key={label} className="flex flex-col items-start">
-            <span className="title12PXMedium">{label}</span>
+            <span className="text-[12px] font-medium">{label}</span>
             <div className="flex items-center gap-x-3">
-              <h1 className="heading32PXBold">{value}</h1>
+              <h1 className="text-[32px] font-bold">{value}</h1>
               {label !== "Seconds" && (
                 <span className="text-[#E07575]">{allIcon.threedots}</span>
               )}
