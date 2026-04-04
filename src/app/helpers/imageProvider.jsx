@@ -5,6 +5,7 @@ import AppleStore from "../assets/apple.png"
 import AuthImage from "../assets/auth-image.png"
 import Gamming from "../assets/gaming.png"
 import BannerImg from "../assets/bannerImg.png"
+import bannerimg from "../assets/banner.png"
 
 const allImages = {
     footerQr: FooterQR,
@@ -13,6 +14,7 @@ const allImages = {
     authImage: AuthImage ,
     gammingImage: Gamming ,
     bannerPrdouctImg: BannerImg ,
+    bannerimg:bannerimg,
 }
 
 export default allImages

@@ -1,9 +1,27 @@
+"use client";
+
 import React from "react";
+import Image from "next/image";
 import Container from "../../common/Container";
 import { category } from "../../../../../data/data";
 import { allIcon } from "../../../helpers/IconProvider";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+import allImages from "../../../helpers/imageProvider";
 
 const Banner = () => {
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+
+    autoplay: true,
+    autoplaySpeed: 1500,
+  };
 
   return (
     <div className="pb-20">
@@ -23,7 +41,22 @@ const Banner = () => {
             </ul>
           </div>
           {/* right part */}
-        
+       <div className="w-[80%] pt-11 pl-5 relative">
+            <Slider {...settings} className="custom-slider">
+              {Array(5)
+                .fill(allImages.bannerimg)
+                .map((imgSrc, idx) => (
+                  <div key={idx}>
+                    <Image
+                      src={imgSrc}
+                      alt={`Banner ${idx + 1}`}
+                      height={450}
+                      className="w-full h-[473px] "
+                    />
+                  </div>
+                ))}
+            </Slider>
+          </div>
         </div>
       </Container>
     </div>

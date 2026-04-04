@@ -1,2 +1,24 @@
 @import "tailwindcss";
 
+.custom-slider {
+  position: relative;
+}
+
+.custom-slider .slick-dots {
+  position: absolute;
+  bottom: 20px;              /* 🔥 image er bottom theke 20px upore */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;               /* 🔥 image er upor show korbe */
+}
+
+.custom-slider .slick-dots li button:before {
+  color: white;
+  font-size: 10px;
+  opacity: 0.7;
+}
+
+.custom-slider .slick-dots li.slick-active button:before {
+  color: red;
+  opacity: 1;
+}
