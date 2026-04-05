@@ -13,7 +13,7 @@ const FlashSale = () => {
         <div className='flex items-end gap-x-[87px]'>
           <Heading title="tomorrow" description="Flash Sale" />
           <Timer  targetDate="2026-04-10T00:00:00"/>
-        
+         {/* <ProductCommonLayout/> */}
         </div>
       </Container>
     </div>
