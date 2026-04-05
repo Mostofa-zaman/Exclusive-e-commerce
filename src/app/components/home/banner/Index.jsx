@@ -28,18 +28,21 @@ const Banner = () => {
       <Container>
         <div className="flex  items-stretch   ">
           {/* left part */}
-          <div className="w-[20%] h-[517px] border-r-[1.5px]  border-[#0000007b] ">
-            <ul className="pt-8">
-              {category?.map((items) => (
-                <div className="flex justify-between hover:bg-gray-200 transition-all items-center pr-5">
-                  <li className="title14PXRegular py-4 cursor-pointer hover:px-5 transition-all">
-                    {items.category}
-                  </li>
-                  <span> {allIcon.righiangle} </span>
-                </div>
-              ))}
-            </ul>
-          </div>
+         <div className="w-[20%] h-[517px] border-r-[1.5px] border-[#0000007b]">
+  <ul className="pt-8">
+    {category?.map((items, index) => (
+      <li
+        key={index}
+        className="flex justify-between items-center pr-5 hover:bg-gray-200 transition-all"
+      >
+        <span className="title14PXRegular py-4 cursor-pointer hover:px-5 transition-all">
+          {items.category}
+        </span>
+        <span>{allIcon.righiangle}</span>
+      </li>
+    ))}
+  </ul>
+</div>
           {/* right part */}
        <div className="w-[80%] pt-11 pl-5 relative">
             <Slider {...settings} className="custom-slider">

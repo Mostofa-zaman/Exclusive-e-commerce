@@ -7,12 +7,12 @@ import FlashSale from "./components/home/flashSale/Index";
 
 export default function Home() {
   return (
-  <h1>
+  <>
     <Header/>
     <Navbar/>
     <Banner/>
     <FlashSale/>
     <Footer/>
-  </h1>
+  </>
   );
 }
