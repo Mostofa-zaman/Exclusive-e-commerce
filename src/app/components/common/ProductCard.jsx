@@ -1,6 +1,7 @@
 import React from "react";
-import allImages from "../../helper/imageProvider";
-import { allIcon } from "../../helper/IconProvider";
+import allImages from "../../helpers/imageProvider";
+import { allIcon } from "../../helpers/IconProvider";
+import Image from "next/image";
 
 const ProductCard = () => {
   // for images & icons
@@ -20,17 +21,21 @@ const ProductCard = () => {
             {eye}
           </button>
         </div>
-        <figure className="">
-          <img
+        <figure className="relative h-[180px] w-[190px]">
+          <Image
+            className="object-cover"
             src={gammingImage}
             alt="gammingImage"
-            className="max-w-[190px] max-h-[180px] object-cover"
+            fill
+            sizes="(max-width: 768px) 100vw, 190px"
           />
         </figure>
 
-        <button className=" absolute w-full cursor-pointer  duration-700 ease-in-out -bottom-[18%] group-hover:bottom-0  py-[10px] bg-button text-primary title16PXMedium">
-          Add To Cart
-        </button>
+<button className="absolute w-full cursor-pointer duration-700 ease-in-out 
+-bottom-[18%] group-hover:bottom-0 
+py-[10px] bg-button group-hover:bg-black text-primary group-hover:text-white title16PXMedium">
+  Add To Cart
+</button>
       </div>
       <div className="mt-4 space-y-2">
         <div>
