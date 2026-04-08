@@ -76,11 +76,14 @@ const prev = () => {
         </div>
        <div className="slider-container pt-10">
       <Slider ref={sliderRef} {...settings}>
-        {[...new Array(partialItemShow||4)].map((_, index) => (
-          <div className={partialItemShow > 4 ? "pr-6" : "pr-6"} key={index}>
-            <ProductCard />
-          </div>
-        ))}
+       {[...new Array(15)].map((_, index) => (
+              <div
+                key={index}
+                className={partialItemShow > 4 ? "pr-8" : "pr-6"}
+              >
+                <ProductCard />
+              </div>
+            ))}
       </Slider>
     </div>
     </Container>

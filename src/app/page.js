@@ -4,6 +4,7 @@ import Navbar from "./components/common/Navbar";
 import Footer from "./components/common/Footer";
 import Banner from "./components/home/banner/Index";
 import FlashSale from "./components/home/flashSale/Index";
+import Category from "./components/category/Index";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
     <Navbar/>
     <Banner/>
     <FlashSale/>
+    <Category/>
     <Footer/>
   </>
   );
