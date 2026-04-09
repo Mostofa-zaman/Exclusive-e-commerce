@@ -9,7 +9,8 @@ import { useGetAllProductQuery } from "@/app/features/api/ProductApi";
 
 const FlashSale = () => {
 
-    const { data, error, isLoading } = useGetAllProductQuery()
+  const { data, error, isLoading } = useGetAllProductQuery()
+  // console.log(data)
   return (
   <div className="">
      <Container>
@@ -22,7 +23,7 @@ const FlashSale = () => {
           heading="Today's"
           description="Flash Sales"
            componentData={data?.products}
-        isLoading={isLoading}
+           isLoading={isLoading}
         />
         <div className="pb-20  mx-auto  w-[234px] ">
           <Button children={"View All Products"}/>

@@ -78,14 +78,24 @@ const prev = () => {
         </div>
        <div className="slider-container pt-10">
       <Slider ref={sliderRef} {...settings}>
-       {componentData?.map((item, index) => (
+           {isLoading ?
+           [... new Array (6)]?.map((_, index) => (
               <div
                 key={index}
                 className={partialItemShow > 4 ? "pr-8" : "pr-6"}
               >
+               <ProductSkeleton/>
+              </div>
+            )) :
+           componentData?.map((item, index) => (
+              <div
+                className={partialItemShow > 4 ? "pr-8" : "pr-6"} 
+                key={item.key}
+              >
                 <ProductCard itemData = {item ? item : {}} />
               </div>
             ))}
+      
       </Slider>
     </div>
     </Container>
