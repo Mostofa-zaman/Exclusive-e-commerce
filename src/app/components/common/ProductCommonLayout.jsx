@@ -18,6 +18,7 @@ const ProductCommonLayout = ({
   heading = "today's",
   description = "flash sale",
   partialItemShow = 4,
+  componentData = [],
   rows = 1,
 }) => {
   const sliderRef = useRef(null);
@@ -76,12 +77,12 @@ const prev = () => {
         </div>
        <div className="slider-container pt-10">
       <Slider ref={sliderRef} {...settings}>
-       {[...new Array(15)].map((_, index) => (
+       {componentData?.map((item, index) => (
               <div
                 key={index}
                 className={partialItemShow > 4 ? "pr-8" : "pr-6"}
               >
-                <ProductCard />
+                <ProductCard itemData = {item ? item : {}} />
               </div>
             ))}
       </Slider>

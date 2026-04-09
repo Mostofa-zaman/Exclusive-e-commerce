@@ -1,16 +1,24 @@
-import React from "react";
-
-import allIcons from "../../helpers/IconProvider";
-
-const CategoryCart = () => {
-  const { categories } = allIcons;
+const CategoryCart = ({ itemData }) => {
   return (
-    <div className="py-6 px-[52px] border border-[#0000004d] rounded-[4px] gap-y-4 flex flex-col items-center hover:bg-secondary2 hover:border-transparent group  transition duration-700 ease-in-out">
-      <span className="text-[45px] group-hover:text-text group-hover:transition group-hover:duration-700 group-hover:ease-in-out">
-        {categories[0].icon}
+    <div
+      className="flex flex-col items-center justify-center py-6 px-4 border border-[#0000004d] rounded-[4px] 
+                    hover:bg-[#DB4444] hover:border-transparent group transition duration-500
+                    w-full max-w-[200px] min-w-[120px] text-center
+                    overflow-hidden"
+    >
+      {/* Icon */}
+      <span className="text-[45px] group-hover:text-white flex-shrink-0">
+        {itemData.icon && (
+          <itemData.icon className="w-10 h-10 md:w-12 md:h-12" />
+        )}
       </span>
-      <p className="title16PXRegular group-hover:text-text text-text2 group-hover:transition group-hover:duration-700 group-hover:ease-in-out">
-        {categories[0].name}
+
+      {/* Name / Text */}
+      <p
+        className="mt-2 text-sm md:text-base font-medium text-text2 group-hover:text-white
+                    break-words truncate ... text-center"
+      >
+        {itemData.name}
       </p>
     </div>
   );

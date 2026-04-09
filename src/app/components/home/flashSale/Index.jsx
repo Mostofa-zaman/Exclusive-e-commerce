@@ -19,6 +19,7 @@ const FlashSale = () => {
           isArrowsTrue={true}
           heading="Today's"
           description="Flash Sales"
+          componentData={[...new Array (15)]}
         
         />
         <div className="pb-20  mx-auto  w-[234px] ">
