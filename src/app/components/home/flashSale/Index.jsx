@@ -5,9 +5,11 @@ import ProductCommonLayout from "../../common/ProductCommonLayout";
 import ProductCard from "../../common/ProductCard";
 import Container from '../../common/Container'
 import Button from '../../common/Button'
+import { useGetAllProductQuery } from "@/app/features/api/ProductApi";
 
 const FlashSale = () => {
 
+    const { data, error, isLoading } = useGetAllProductQuery()
   return (
   <div className="">
      <Container>
@@ -19,8 +21,8 @@ const FlashSale = () => {
           isArrowsTrue={true}
           heading="Today's"
           description="Flash Sales"
-          componentData={[...new Array (15)]}
-        
+           componentData={data?.products}
+        isLoading={isLoading}
         />
         <div className="pb-20  mx-auto  w-[234px] ">
           <Button children={"View All Products"}/>
