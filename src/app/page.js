@@ -6,6 +6,7 @@ import Banner from "./components/home/banner/Index";
 import FlashSale from "./components/home/flashSale/Index";
 import Category from "./components/home/category/Index";
 import BestSelling from "./components/home/bestSelling/Index";
+import ExploreProduct from "./components/home/exploreProduct/Index";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
     <FlashSale/>
     <Category/>   
     <BestSelling/>
+    <ExploreProduct/>
     <Footer/>
   </>
   );
