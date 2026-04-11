@@ -13,7 +13,7 @@ export default function Home() {
     <Navbar/>
     <Banner/>
     <FlashSale/>
-    <Category/>
+    {/* <Category/>    */}
     <Footer/>
   </>
   );
