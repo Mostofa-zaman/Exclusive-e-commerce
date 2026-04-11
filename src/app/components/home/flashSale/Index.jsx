@@ -21,6 +21,7 @@ const FlashSale = () => {
           timeofOffer={1}
           isArrowsTrue={true}
           heading="Today's"
+          partialItemShow={4}
           description="Flash Sales"
            componentData={data?.products}
            isLoading={isLoading}

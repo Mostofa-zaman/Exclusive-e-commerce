@@ -20,6 +20,7 @@ const ProductCommonLayout = ({
   partialItemShow = 4,
   componentData = [],
   isLoading,
+  viewButton = false,
   rows = 1,
 }) => {
   const sliderRef = useRef(null);
@@ -70,12 +71,12 @@ const prev = () => {
               </h1>
             </div>
           )}
-{/* 
+
           {viewButton && (
-            <div className="bg-redDB4444  text-md font-popins font-medium text-white_FFFFFF px-[48px] py-4 rounded cursor-pointer hover:opacity-75">
+            <div className="bg-[#DB4444]  text-md font-popins font-medium text-white px-[48px] py-4 rounded cursor-pointer hover:opacity-75">
               View All
             </div>
-          )} */}
+          )}
         </div>
        <div className="slider-container pt-10">
       <Slider ref={sliderRef} {...settings}>

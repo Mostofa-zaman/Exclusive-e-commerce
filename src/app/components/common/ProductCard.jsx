@@ -14,7 +14,7 @@ const ProductCard = ({ itemData }) => {
       <div className="bg-[#F5F5F5] overflow-hidden rounded-[4px] py-[75px] flex justify-center relative">
         {/* Discount Badge */}
          {itemData.discountPercentage && (
-         <div className="px-3 py-1 bg-secondary2 text-text absolute rounded-[4px] top-3 left-3">
+         <div className="px-3 py-1 bg-[#DB4444] text-white absolute rounded-[4px] top-3 left-3">
           -{itemData ? itemData.discountPercentage : 41}%
         </div>
        )}
