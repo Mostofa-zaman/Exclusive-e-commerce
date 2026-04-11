@@ -1,7 +1,7 @@
 import React from "react";
 import allImages from "../../helpers/imageProvider";
 import { allIcon } from "../../helpers/IconProvider";
-
+import useCalculateDiscount from "@/app/coustomHooks/useCalculateDiscount";
 const ProductCard = ({ itemData }) => {
   // for images & icons
   // console.log("items", itemData);
@@ -51,11 +51,11 @@ const ProductCard = ({ itemData }) => {
 
           <p>
             <span className="text-secondary2 title16PXMedium">
-              $ {itemData ? itemData.price : 120}
+              $ {useCalculateDiscount(itemData.price, itemData.discountPercentage).toFixed(2)}
             </span>
 
             <del className="text-[#00000071] title16PXMedium ml-4">
-              ${itemData ? itemData.price: 160}
+              ${itemData ? itemData.price: 160 .toFixed(2)}
             </del>
           </p>
         </div>

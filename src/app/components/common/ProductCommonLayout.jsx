@@ -34,11 +34,12 @@ const ProductCommonLayout = ({
   };
 
  const next = () => {
-    sliderRef.current.slickNext(); // Next = Next slide
+    
+    sliderRef.current.slickPrev(); 
 };
 
 const prev = () => {
-    sliderRef.current.slickPrev(); // Prev = Previous slide
+    sliderRef.current.slickNext(); 
 };
 
   return (
