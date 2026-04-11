@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import allIcon from "../../helpers/IconProvider";
 
-const Timer = () => {
+const Timer = ({ isCircle = false }) => {
   const [time, setTime] = useState({
     days: "00",
     hours: "00",
@@ -32,15 +32,26 @@ const Timer = () => {
     <div className="flex items-center gap-x-5 pt-12">
       {labels.map((label, idx) => {
         const value = Object.values(time)[idx];
+
         return (
-          <div key={label} className="flex flex-col items-start">
-            <span className="text-[12px] font-medium">{label}</span>
-            <div className="flex items-center gap-x-3">
-              <h1 className="text-[32px] font-bold">{value}</h1>
-              {label !== "Seconds" && (
-                <span className="text-[#E07575]">{allIcon.threedots}</span>
-              )}
+          <div key={label} className="flex items-center gap-x-3">
+            
+            {/* Circle Box */}
+            <div
+              className={`flex flex-col items-center justify-center
+              ${isCircle ? "w-[80px] h-[80px] bg-white rounded-full shadow" : ""}
+              `}
+            >
+              <span className="text-[12px] font-medium">{label}</span>
+              <h1 className="text-[22px] font-bold leading-none">{value}</h1>
             </div>
+
+            {/* Dots */}
+            {label !== "Seconds" && (
+              <span className="text-[#E07575]">
+                {allIcon.threedots}
+              </span>
+            )}
           </div>
         );
       })}

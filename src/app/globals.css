@@ -14,25 +14,20 @@
 }
 
 
-.custom-slider {
-  position: relative;
-}
-
-.custom-slider .slick-dots {
-  position: absolute;
-  bottom: 20px;              /* 🔥 image er bottom theke 20px upore */
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;               /* 🔥 image er upor show korbe */
-}
-
-.custom-slider .slick-dots li button:before {
-  color: white;
-  font-size: 10px;
-  opacity: 0.7;
-}
-
-.custom-slider .slick-dots li.slick-active button:before {
-  color: red;
-  opacity: 1;
-}
+  .imagShadow {
+    position: relative;
+    z-index: 1;
+  }
+  .imagShadow::after {
+    position: absolute;
+    content: "";
+    left: 50%;
+    z-index: -1;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+ -webkit-box-shadow: 0px 0px 200px 120px rgba(217, 217, 217, 0.85);
+-moz-box-shadow: 0px 0px 200px 120px rgba(217, 217, 217, 0.85);
+box-shadow: 0px 0px 200px 120px rgba(217, 217, 217, 0.85);
+  }

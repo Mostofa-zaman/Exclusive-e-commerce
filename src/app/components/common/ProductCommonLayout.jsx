@@ -29,9 +29,10 @@ const ProductCommonLayout = ({
     infinite: true,
     speed: 500,
     slidesToShow: partialItemShow || 4,
-    // slidesToScroll: partialItemShow - 1,
+    slidesToScroll: partialItemShow - 1,
     rows: rows,
     autoplay: false,
+     arrows: false, 
   };
 
  const next = () => {
