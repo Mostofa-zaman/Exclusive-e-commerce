@@ -3,7 +3,7 @@
 import React from "react";
 import Container from "../../common/Container";
 import Heading from "../../common/Heading";
-import newArrivalLeftImage from "../../../assets/images/playstaatio.png";
+import newArrivalLeftImage from "../../../assets/playstaatio.png";
 
 const NewArrival = () => {
   return (
@@ -18,6 +18,7 @@ const NewArrival = () => {
               className="w-full h-full o rounded-sm"
             />
           </div>
+          
         </div>
       </Container>
     </div>
