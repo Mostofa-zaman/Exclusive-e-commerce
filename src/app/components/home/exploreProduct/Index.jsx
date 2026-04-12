@@ -12,7 +12,7 @@ const ExploreProduct = () => {
   const { data, error, isLoading } = useGetAllProductQuery();
   return (
     <Container>
-      <div>
+      <div className="flex flex-col items-center border-b-[1px] border-b-black mb-10">
         <ProductCommonLayout
           ProductCard={ProductCard}
           heading="Our Products"

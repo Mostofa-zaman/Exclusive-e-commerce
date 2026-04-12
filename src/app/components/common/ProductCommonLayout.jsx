@@ -48,7 +48,7 @@ const prev = () => {
     <div className="mt-[140px] mb-[60px] ">
       <Container>
         <div className="flex justify-between items-center">
-          <div className="flex items-end gap-x-[87px]">
+          <div className="flex flex-col gap-x-[87px]  gap-y-3">
             <Heading title={heading} description={description} />
             {timeStamp && <Timer timeofOffer={timeofOffer} />}
           </div>
@@ -92,7 +92,7 @@ const prev = () => {
             )) :
            componentData?.map((item, index) => (
               <div
-                className={partialItemShow > 4 ? "pr-8" : "pr-6"} 
+                  className={`{partialItemShow > 4 ? "pr-8" : "pr-6"} py-4 px-3` } 
                 key={item.key}
               >
                 <ProductCard itemData = {item ? item : {}} />
