@@ -8,6 +8,7 @@ import Category from "./components/home/category/Index";
 import BestSelling from "./components/home/bestSelling/Index";
 import ExploreProduct from "./components/home/exploreProduct/Index";
 import Experience from "./components/home/experience/Index";
+import NewArrival from "./components/home/newArrival/Index";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
     <BestSelling/>
     <Experience/>
     <ExploreProduct/>
+    <NewArrival/>
     <Footer/>
   </>
   );
