@@ -9,6 +9,7 @@ import BestSelling from "./components/home/bestSelling/Index";
 import ExploreProduct from "./components/home/exploreProduct/Index";
 import Experience from "./components/home/experience/Index";
 import NewArrival from "./components/home/newArrival/Index";
+import CustomerService from "./components/home/coustomerService/Index";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
     <Experience/>
     <ExploreProduct/>
     <NewArrival/>
+    <CustomerService/>
     <Footer/>
   </>
   );

@@ -8,10 +8,10 @@ import Container from "../../common/Container";
 
 const Experience = () => {
   return (
-    <div className="my-[120px] overflow-hidden ">
+    <div >
       <Container>
         <div className="flex ">
-          <div className="w-1/2 py-[69px] px-10 bg-black ">
+          <div className="w-1/2  bg-black ">
             <h3 className="text-[#00FF66] text-[16px] font-semibold font-popins">
               Categories
             </h3>

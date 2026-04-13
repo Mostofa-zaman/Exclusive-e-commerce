@@ -24,7 +24,7 @@ const Banner = () => {
   };
 
   return (
-    <div className="pb-20">
+    <div className="">
       <Container>
         <div className="flex  items-stretch   ">
           {/* left part */}

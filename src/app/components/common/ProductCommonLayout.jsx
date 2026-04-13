@@ -48,7 +48,7 @@ const prev = () => {
     <div className="mt-[140px] mb-[60px] ">
       <Container>
         <div className="flex justify-between items-center">
-          <div className="flex flex-col gap-x-[87px]  gap-y-3">
+          <div className="flex  gap-x-[87px]  gap-y-3">
             <Heading title={heading} description={description} />
             {timeStamp && <Timer timeofOffer={timeofOffer} />}
           </div>

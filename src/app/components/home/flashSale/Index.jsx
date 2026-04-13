@@ -14,7 +14,7 @@ const FlashSale = () => {
   return (
   <div className="">
      <Container>
-      <div className="flex flex-col border-b-[1px] border-b-black mb-10">
+      <div className="flex flex-col border-b-[1px] border-b-black ">
         <ProductCommonLayout
           ProductCard={ProductCard}
           timeStamp={true}
