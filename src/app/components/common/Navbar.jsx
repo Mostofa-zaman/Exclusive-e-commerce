@@ -2,6 +2,8 @@ import React from "react";
 import Container from "./Container";
 import { menuItems } from "../../helpers/ProjectArrays";
 import allIcon from "../../helpers/IconProvider";
+import Link from "next/link";
+
 
 const Navbar = () => {
   const { navIcon, searchIcon } = allIcon;
@@ -19,7 +21,9 @@ const Navbar = () => {
                 key={item.id}
                 className="relative cursor-pointer py-[2px] overflow-hidden after:absolute after:content-[''] after:h-[2px] after:w-full after:bg-gray-300 after:bottom-0 after:-left-full hover:after:left-0 after:transition-all after:duration-300 after:ease-in-out"
               >
-                {item.name}
+                <Link href={item.path} className="block">
+                  {item.name}
+                </Link>
               </li>
             ))}
           </ul>

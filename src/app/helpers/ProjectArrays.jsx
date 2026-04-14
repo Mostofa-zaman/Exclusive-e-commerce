@@ -1,7 +1,7 @@
 const menuItems = [
   { id: 1, name: "Home", path: "/" },
-  { id: 2, name: "Contact", path: "/contact" },
   { id: 3, name: "About", path: "/about" },
+  { id: 2, name: "Contact", path: "/contact" },
   { id: 4, name: "Sign Up", path: "/signup" },
 ];
 
