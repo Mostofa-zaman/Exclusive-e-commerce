@@ -10,8 +10,8 @@ const Experience = () => {
   return (
     <div >
       <Container>
-        <div className="flex ">
-          <div className="w-1/2  bg-black ">
+        <div className="flex flex-col lg:flex-row items-center bg-black rounded-xl overflow-hidden ">
+          <div className="w-full lg:w-1/2 px-8 py-12  ">
             <h3 className="text-[#00FF66] text-[16px] font-semibold font-popins">
               Categories
             </h3>
@@ -27,7 +27,10 @@ const Experience = () => {
             </div>
           </div>
           <div className="w-1/2 flex justify-center items-center imagShadow bg-black ">
-            <Image src={exprerienceImag} />
+            <Image
+             src={exprerienceImag}
+             alt={exprerienceImag}
+             />
           </div>
         </div>
       </Container>

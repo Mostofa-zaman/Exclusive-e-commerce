@@ -9,6 +9,7 @@ import { IoMdArrowBack } from "react-icons/io";
 import { IoArrowForward } from "react-icons/io5";
 import ProductSkeleton from "../../helpers/ProductSkeleton";
 import Container from "./Container.jsx";
+import dynamic from "next/dynamic";
 
 const ProductCommonLayout = ({
   ProductCard = () => <ProductSkeleton />,
@@ -35,14 +36,14 @@ const ProductCommonLayout = ({
      arrows: false, 
   };
 
- const next = () => {
-    
-    sliderRef.current.slickPrev(); 
+const next = () => {
+  sliderRef.current.slickNext();
 };
 
 const prev = () => {
-    sliderRef.current.slickNext(); 
+  sliderRef.current.slickPrev();
 };
+const Slider = dynamic(() => import("react-slick"), { ssr: false });
 
   return (
     <div className="mt-[140px] mb-[60px] ">
@@ -92,7 +93,7 @@ const prev = () => {
             )) :
            componentData?.map((item, index) => (
               <div
-                  className={`{partialItemShow > 4 ? "pr-8" : "pr-6"} py-4 px-3` } 
+                  className={`${partialItemShow > 4 ? "pr-8" : "pr-6"} py-4 px-3` } 
                 key={item.key}
               >
                 <ProductCard itemData = {item ? item : {}} />
