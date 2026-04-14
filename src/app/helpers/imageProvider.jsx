@@ -6,6 +6,7 @@ import AuthImage from "../assets/auth-image.png"
 import Gamming from "../assets/gaming.png"
 import BannerImg from "../assets/bannerImg.png"
 import bannerimg from "../assets/banner.png"
+import aboutimg from '../assets/aboutimg.png'
 
 const allImages = {
     footerQr: FooterQR,
@@ -15,6 +16,7 @@ const allImages = {
     gammingImage: Gamming ,
     bannerPrdouctImg: BannerImg ,
     bannerimg:bannerimg,
+    aboutimg:aboutimg,
 }
 
 export default allImages

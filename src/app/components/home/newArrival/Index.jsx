@@ -11,7 +11,7 @@ import Image from "next/image";
 
 const NewArrival = () => {
   return (
-    <div className="pt-10 pb-100">
+    <div className="pt-10 pb-40">
       <Container>
        <div className="flex justify-center">
          <Heading title={"Featured"} description={"New Arrival"} />
