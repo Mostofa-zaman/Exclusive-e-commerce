@@ -1,7 +1,9 @@
+"use client"
+
 import BreadCrumb from "../components/common/BreadCrumb";
 import Container from "../components/common/Container";
 import ProductPageLeft from "../components/productPageComponents/ProductPageLeft";
-
+import {useGetAllProductCategoryListQuery} from '../features/api/ProductApi'
 export default function Product() {
   const {data, error , isLoading}= useGetAllProductCategoryListQuery ();
   return (
@@ -10,11 +12,11 @@ export default function Product() {
         <Container>
           <BreadCrumb />
           <div className="flex justify-between ">
-            {/* <ProductPageLeft
+            <ProductPageLeft
               categoryData={data}
               error={error}
               isLoading={isLoading}
-            /> */}
+            />
             {/* <ProductPageRight /> */}
           </div>
         </Container>
