@@ -3,6 +3,7 @@
 import BreadCrumb from "../components/common/BreadCrumb";
 import Container from "../components/common/Container";
 import ProductPageLeft from "../components/productPageComponents/ProductPageLeft";
+import ProductPageRight from "../components/productPageComponents/ProductPageRight";
 import {useGetAllProductCategoryListQuery} from '../features/api/ProductApi'
 export default function Product() {
   const {data, error , isLoading}= useGetAllProductCategoryListQuery ();
@@ -17,7 +18,7 @@ export default function Product() {
               error={error}
               isLoading={isLoading}
             />
-            {/* <ProductPageRight /> */}
+            <ProductPageRight />
           </div>
         </Container>
       </div>
