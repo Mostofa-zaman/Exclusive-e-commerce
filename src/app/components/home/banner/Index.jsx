@@ -9,6 +9,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import allImages from "../../../helpers/imageProvider";
+import Link from "next/link";
 
 const Banner = () => {
   var settings = {
@@ -29,15 +30,20 @@ const Banner = () => {
           {/* left part */}
           <div className="w-[20%] h-[517px] border-r-[1.5px] border-[#0000007b]">
             <ul className="pt-8">
-              {category?.map((items, index) => (
+              {category?.map((items, id) => (
                 <li
-                  key={index}
+                  key={id}
                   className="flex justify-between items-center pr-5 hover:bg-gray-200 transition-all"
                 >
-                  <span className="title14PXRegular py-4 cursor-pointer hover:px-5 transition-all">
-                    {items.category}
-                  </span>
-                  <span>{allIcon.righiangle}</span>
+                  <Link
+                    href={`/product/${items.id}`} // ✅ dynamic route
+                    className="flex justify-between items-center w-full"
+                  >
+                    <span className="title14PXRegular py-4 cursor-pointer hover:px-5 transition-all">
+                      {items.category}
+                    </span>
+                    <span>{allIcon.righiangle}</span>
+                  </Link>
                 </li>
               ))}
             </ul>

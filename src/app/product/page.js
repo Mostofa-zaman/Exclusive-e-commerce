@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link";
 import BreadCrumb from "../components/common/BreadCrumb";
 import Container from "../components/common/Container";
 import ProductPageLeft from "../components/productPageComponents/ProductPageLeft";
