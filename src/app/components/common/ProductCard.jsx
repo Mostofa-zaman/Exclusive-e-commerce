@@ -3,6 +3,7 @@ import allImages from "../../helpers/imageProvider";
 import { allIcon } from "../../helpers/IconProvider";
 import useCalculateDiscount from "@/app/coustomHooks/useCalculateDiscount";
 import RatingStars from "./RatingStars";
+import Link from "next/link";
 const ProductCard = ({ itemData }) => {
   // for images & icons
   // console.log("items", itemData);
@@ -10,14 +11,14 @@ const ProductCard = ({ itemData }) => {
   const { eye, navIcon, star } = allIcon;
 
   return (
-   <div className="group w-full min-w-0 bg-white rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 p-2">
+    <div className="group w-full min-w-0 bg-white rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 p-2">
       <div className="bg-[#F5F5F5] overflow-hidden rounded-[4px] py-[75px] flex justify-center relative">
         {/* Discount Badge */}
-         {itemData.discountPercentage && (
-         <div className="px-3 py-1 bg-[#DB4444] text-white absolute rounded-[4px] top-3 left-3">
-          -{itemData ? itemData.discountPercentage : 41}%
-        </div>
-       )}
+        {itemData.discountPercentage && (
+          <div className="px-3 py-1 bg-[#DB4444] text-white absolute rounded-[4px] top-3 left-3">
+            -{itemData ? itemData.discountPercentage : 41}%
+          </div>
+        )}
 
         {/* Action Buttons */}
         <div className="flex h-fit flex-col absolute right-[17px] gap-y-2 top-[17px]">
@@ -31,18 +32,19 @@ const ProductCard = ({ itemData }) => {
         </div>
 
         {/* Product Image */}
-        <figure>
-          <img
-            src={itemData ? itemData.thumbnail : gammingImage}
-            alt="gammingImage"
-            className="max-w-[190px] max-h-[180px] object-cover"
-          />
-        </figure>
+        <Link href={`/product/${itemData?.id}`}>
+          <figure>
+            <img
+              src={itemData ? itemData.thumbnail : gammingImage}
+              alt="gammingImage"
+              className="max-w-[190px] max-h-[180px] object-cover"
+            />
+          </figure>
 
-        {/* Add To Cart Button */}
-        <button className="absolute w-full cursor-pointer duration-700 ease-in-out -bottom-[18%] group-hover:bottom-0 py-[10px] bg-black text-white title16PXMedium">
-          Add To Cart
-        </button>
+          <button className="absolute w-full cursor-pointer duration-700 ease-in-out -bottom-[18%] group-hover:bottom-0 py-[10px] bg-black text-white title16PXMedium">
+            Add To Cart
+          </button>
+        </Link>
       </div>
 
       {/* Product Info */}
@@ -71,7 +73,7 @@ const ProductCard = ({ itemData }) => {
         <div className="flex gap-x-4">
           <RatingStars rating={itemData && itemData.rating} />
           <h3 className="title14PXSemiBold text-[#00000071]">
-            {`(${ itemData?.reviews?.length })`}
+            {`(${itemData?.reviews?.length})`}
           </h3>
         </div>
       </div>

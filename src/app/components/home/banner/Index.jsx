@@ -35,15 +35,12 @@ const Banner = () => {
                   key={id}
                   className="flex justify-between items-center pr-5 hover:bg-gray-200 transition-all"
                 >
-                  <Link
-                    href={`/product/${items.id}`} // ✅ dynamic route
-                    className="flex justify-between items-center w-full"
-                  >
+                
                     <span className="title14PXRegular py-4 cursor-pointer hover:px-5 transition-all">
                       {items.category}
                     </span>
                     <span>{allIcon.righiangle}</span>
-                  </Link>
+                 
                 </li>
               ))}
             </ul>
