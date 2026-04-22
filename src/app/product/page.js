@@ -1,13 +1,12 @@
-"use client"
+"use client";
 
-import Link from "next/link";
 import BreadCrumb from "../components/common/BreadCrumb";
 import Container from "../components/common/Container";
 import ProductPageLeft from "../components/productPageComponents/ProductPageLeft";
 import ProductPageRight from "../components/productPageComponents/ProductPageRight";
-import {useGetAllProductCategoryListQuery} from '../features/api/ProductApi'
+import { useGetAllProductCategoryListQuery } from "../features/api/ProductApi";
 export default function Product() {
-  const {data, error , isLoading}= useGetAllProductCategoryListQuery ();
+  const { data, error, isLoading } = useGetAllProductCategoryListQuery();
   return (
     <>
       <div className=" py-10">

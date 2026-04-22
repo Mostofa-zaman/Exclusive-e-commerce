@@ -3,8 +3,7 @@
 
 import React, { useRef } from "react";
 import Heading from "../common/Heading";
-import Timer from "../Common/Timer";
-import Slider from "react-slick";
+import Timer from "../common/Timer";
 import { IoMdArrowBack } from "react-icons/io";
 import { IoArrowForward } from "react-icons/io5";
 import ProductSkeleton from "../../helpers/ProductSkeleton";

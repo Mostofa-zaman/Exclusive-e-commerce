@@ -9,7 +9,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import allImages from "../../../helpers/imageProvider";
-import Link from "next/link";
 
 const Banner = () => {
   var settings = {
@@ -35,12 +34,10 @@ const Banner = () => {
                   key={id}
                   className="flex justify-between items-center pr-5 hover:bg-gray-200 transition-all"
                 >
-                
                     <span className="title14PXRegular py-4 cursor-pointer hover:px-5 transition-all">
                       {items.category}
                     </span>
                     <span>{allIcon.righiangle}</span>
-                 
                 </li>
               ))}
             </ul>
