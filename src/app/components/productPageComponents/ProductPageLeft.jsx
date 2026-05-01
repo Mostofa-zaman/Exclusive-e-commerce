@@ -24,8 +24,10 @@ const ProductPageLeft = ({ categoryData, isLoading }) => {
         </ul>
       ) : (
         <ul className="pt-8">
-          {categoryData?.map((items) => (
-            <div className="flex justify-between hover:bg-gray-200 transition-all items-center">
+          {categoryData?.map((items , index) => (
+            <div
+            key={index}
+            className="flex justify-between hover:bg-gray-200 transition-all items-center">
               <li className=" py-4 cursor-pointer hover:px-5 transition-all text-md text-black font-normal py-3 cursor-pointer capitalize font-poppins ">
                 {items}
               </li>
