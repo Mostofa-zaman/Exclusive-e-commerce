@@ -41,10 +41,12 @@ const ProductCard = ({ itemData }) => {
             </figure>
 
             <button
-              className="absolute w-full duration-700 ease-in-out 
-                 -bottom-[40%] opacity-0 
-                 group-hover:-bottom-[75px] group-hover:opacity-100 
-                 py-[10px] bg-black text-white title16PXMedium"
+              className="absolute w-[300px] left-1/2 -translate-x-1/2
+             flex justify-center items-center
+             py-[10px] bg-black text-white title16PXMedium
+             opacity-0 translate-y-15
+             transition-all duration-300 ease-out
+             group-hover:opacity-100 group-hover:translate-y-7"
             >
               Add To Cart
             </button>
