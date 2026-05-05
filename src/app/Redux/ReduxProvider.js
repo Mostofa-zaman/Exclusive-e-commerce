@@ -1,5 +1,5 @@
 
-"use client"; // Eta must!
+"use client"; 
 
 import { Provider } from "react-redux";
 import { store } from "../features/store.js";

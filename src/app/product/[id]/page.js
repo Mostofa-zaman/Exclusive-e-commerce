@@ -1,20 +1,28 @@
 "use client";
 
+import BreadCrumb from "@/app/components/common/BreadCrumb";
+import Container from "@/app/components/common/Container";
 import { useGetSingleProductQuery } from "@/app/features/api/ProductApi";
-import React, { useState } from "react";
+import { useParams } from "next/navigation";
+import React, { useEffect, useState } from "react";
 
 const ProductDetails = () => {
-  const {data ,error ,isLoading} = useGetSingleProductQuery(parseInt(2));
-  console.log(data)
-  const images = [
-    "https://images.unsplash.com/photo-1505740420928-5e560c06d30e",
-    "https://images.unsplash.com/photo-1505751171710-1f6d0ace5a85",
-    "https://images.unsplash.com/photo-1484704849700-f032a568e944",
-    "https://images.unsplash.com/photo-1496957961599-e35b69ef5d7c",
-    "https://images.unsplash.com/photo-1528148343865-51218c4a13e6",
-  ];
+    const params = useParams();
+  const id = params?.id;  
+  const {data ,error ,isLoading} = useGetSingleProductQuery(Number(id));
 
-  const [mainImage, setMainImage] = useState(images[0]);
+const images = data?.images || [];
+
+
+const [mainImage, setMainImage] = useState("");
+
+  useEffect(() => {
+    if (images.length > 0) {
+      setMainImage(images[0]);
+    }
+  }, [images]);
+
+
   const [zoomStyle, setZoomStyle] = useState({});
 
   // HANDLE ZOOM
@@ -35,9 +43,15 @@ const ProductDetails = () => {
       transform: "scale(1)",
     });
   };
+    if (isLoading) return <p>Loading...</p>;
+  if (error) return <p>Error...</p>;
 
   return (
     <div className="bg-gray-100">
+
+    <Container>
+      <BreadCrumb/>
+    </Container>
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-wrap -mx-4">
 
