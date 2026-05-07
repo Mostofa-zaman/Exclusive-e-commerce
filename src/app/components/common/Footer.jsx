@@ -84,6 +84,7 @@ const Footer = () => {
                   src={footerQr}
                   alt="footer-qr"
                   fill
+                    sizes="100px"
                   className="object-contain cursor-pointer"
                 />
               </div>

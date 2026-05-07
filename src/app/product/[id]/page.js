@@ -13,7 +13,7 @@ const ProductDetails = () => {
 
   const images = data?.images || [];
 
-  const [mainImage, setMainImage] = useState("");
+  const [mainImage, setMainImage] = useState(null);
 
   useEffect(() => {
     if (images.length > 0) {
@@ -22,6 +22,11 @@ const ProductDetails = () => {
   }, [images]);
 
   const [zoomStyle, setZoomStyle] = useState({});
+
+  const product = data || {};
+  const [selectedColor, setSelectedColor] = useState(null);
+  const [selectedSize, setSelectedSize] = useState(null);
+  const [qty, setQty] = useState(1);
 
   // HANDLE ZOOM
   const handleMouseMove = (e) => {
@@ -86,57 +91,78 @@ const ProductDetails = () => {
 
           {/* RIGHT - DETAILS */}
           <div className="w-full md:w-1/2 px-4">
-            <h2 className="text-3xl font-bold mb-2">
-              Premium Wireless Headphones
-            </h2>
-
+            <h2 className="text-3xl font-bold mb-2">{product.title}</h2>
             <div className="flex items-center mb-4">
-              <span className="text-yellow-500 text-xl">★★★★★</span>
-              <span className="ml-2 text-gray-600">4.5 (120 reviews)</span>
+              <span className="text-yellow-500 text-xl">
+                {"★".repeat(Math.round(product.rating || 0))}
+              </span>
+              <span className="ml-2 text-gray-600">
+                {product.rating} ({product.reviewsCount} reviews)
+              </span>
             </div>
 
             <div className="mb-4">
-              <span className="text-2xl font-bold mr-2">$349.99</span>
-              <span className="text-gray-500 line-through">$399.99</span>
+              <span className="text-2xl font-bold mr-2">${product.price}</span>
+
+              {product.oldPrice && (
+                <span className="text-gray-500 line-through">
+                  ${product.oldPrice}
+                </span>
+              )}
             </div>
 
             <p className="text-gray-700 mb-6 border-b-1 pb-5">
-              Experience premium sound quality and industry-leading noise
-              cancellation with these wireless headphones.
+              {product.description}
             </p>
-
             <div className="space-y-6">
               {/* COLORS */}
-              <div className="flex items-center gap-6 ">
-                <h3 className="text-[20px] font-normal font-inter mb-2">Colours:</h3>
-                <div className="flex gap-2 items-center">
-                  <div className="w-5 h-5 rounded-full border border-gray-300 bg-white cursor-pointer"></div>
-                  <div className="w-5 h-5 rounded-full bg-red-400 cursor-pointer"></div>
-                </div>
+              <div className="flex gap-2 items-center">
+                {product.colors?.map((color, i) => (
+                  <div
+                    key={i}
+                    onClick={() => setSelectedColor(color)}
+                    className={`w-5 h-5 rounded-full cursor-pointer border ${
+                      selectedColor === color ? "ring-2 ring-black" : ""
+                    }`}
+                    style={{ backgroundColor: color }}
+                  />
+                ))}
               </div>
 
               {/* SIZE */}
-              <div>
-                <h3 className="text-[20px] font-normal font-inter mb-2">Size:</h3>
-                <div className="flex gap-2">
-                  {["XS", "S", "M", "L", "XL"].map((size) => (
-                    <button
-                      key={size}
-                      className="px-3 py-1 border rounded hover:bg-black hover:text-white transition"
-                    >
-                      {size}
-                    </button>
-                  ))}
-                </div>
-              </div>
+              {product.sizes?.map((size) => (
+                <button
+                  key={size}
+                  onClick={() => setSelectedSize(size)}
+                  className={`px-3 py-1 border rounded transition ${
+                    selectedSize === size
+                      ? "bg-black text-white"
+                      : "hover:bg-black hover:text-white"
+                  }`}
+                >
+                  {size}
+                </button>
+              ))}
 
               {/* QUANTITY + BUY */}
               <div className="flex items-center gap-5">
                 {/* quantity */}
                 <div className="flex items-center border rounded ">
-                  <button className="px-3 py-1 border-r">−</button>
-                  <span className="px-8">2</span>
-                  <button className="px-3 py-1 border-l">+</button>
+                  <button
+                    onClick={() => setQty((prev) => Math.max(1, prev - 1))}
+                    className="px-3 py-1 border-r"
+                  >
+                    −
+                  </button>
+
+                  <span className="px-8">{qty}</span>
+
+                  <button
+                    onClick={() => setQty((prev) => prev + 1)}
+                    className="px-3 py-1 border-l"
+                  >
+                    +
+                  </button>
                 </div>
 
                 {/* buy button */}
