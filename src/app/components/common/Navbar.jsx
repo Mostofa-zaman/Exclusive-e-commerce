@@ -24,10 +24,7 @@ const Navbar = () => {
             {menuItems.map((item) => (
               <li
                 key={item.id}
-                className="relative cursor-pointer py-[2px] overflow-hidden
-                after:absolute after:content-[''] after:h-[2px] after:w-full
-                after:bg-gray-300 after:bottom-0 after:-left-full
-                hover:after:left-0 after:transition-all after:duration-300"
+             className="relative cursor-pointer py-[2px] overflow-hidden after:absolute after:content-[''] after:h-[2px] after:w-full after:bg-gray-300 after:bottom-0 after:-left-full hover:after:left-0 after:transition-all after:duration-300"
               >
                 <Link href={item.path} className="text-sm lg:text-base">
                   {item.name}
@@ -44,8 +41,7 @@ const Navbar = () => {
               <input
                 type="text"
                 placeholder="Search..."
-                className="w-full py-2 px-4 border rounded-full text-sm
-                focus:outline-none focus:ring-2 focus:ring-gray-400"
+              className="w-full py-2 px-4 border rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-gray-400"
               />
               <button className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-600">
                 {searchIcon}
@@ -57,13 +53,12 @@ const Navbar = () => {
               {navIcon.map((item) => (
                 <li
                   key={item.id}
-                  className="relative cursor-pointer p-2 lg:p-3 rounded-full
-                  hover:bg-gray-200 transition text-lg flex items-center justify-center"
+                 className="relative cursor-pointer p-2 lg:p-3 rounded-full hover:bg-gray-200 transition text-lg flex items-center justify-center"
                 >
                   {item.icon}
 
                   {item.to === "/addtocart" && (
-                    <span className="absolute -top-1 -right-1 text-[10px] bg-black text-white rounded-full h-4 w-4 flex items-center justify-center">
+                    <span className="absolute -top-1 -right-1 text-[10px] bg-black text-white rounded-full h-4 w-4 inline-flex items-center justify-center">
                       2
                     </span>
                   )}
@@ -122,7 +117,7 @@ const Navbar = () => {
                   {item.icon}
 
                   {item.to === "/addtocart" && (
-                    <span className="absolute -top-1 -right-1 text-xs bg-black text-white rounded-full h-5 w-5 flex items-center justify-center">
+                    <span className="absolute -top-1 -right-1 text-xs bg-black text-white rounded-full h-5 w-5 inline-flex items-center justify-center">
                       2
                     </span>
                   )}

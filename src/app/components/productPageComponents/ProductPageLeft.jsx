@@ -1,65 +1,47 @@
-"use client"
+"use client";
 
 import React from "react";
 
-const ProductPageLeft = ({ categoryData, isLoading }) => {
+const ProductPageLeft = ({
+  categoryData,
+  isLoading,
+  setSelectedCategory,
+}) => {
   return (
-    <div className="w-[20%]  ">
-      <h1 className="text-[20px] font-bold font-poppins pt-10 cursor-pointer">
+    <div className="w-[20%]">
+      <h1 className="text-[20px] font-bold font-poppins pt-10">
         Shop by Category
       </h1>
+
       {isLoading ? (
         <ul>
-          {/* Simulate 5 loading skeleton items */}
-          {Array(10)
-            .fill("")
-            .map((_, index) => (
-              <div
-                key={index}
-                className="flex items-center justify-between hover:bg-gray-200 transition-all"
-              >
-                <li className="flex animate-pulse bg-gray-300 rounded w-full h-6 my-3"></li>
-              </div>
-            ))}
+          {Array(8).fill("").map((_, index) => (
+            <li
+              key={index}
+              className="animate-pulse bg-gray-300 h-6 my-3 rounded"
+            ></li>
+          ))}
         </ul>
       ) : (
         <ul className="pt-8">
-          {categoryData?.map((items , index) => (
-            <div
-            key={index}
-            className="flex justify-between hover:bg-gray-200 transition-all items-center">
-              <li className=" py-4 cursor-pointer hover:px-5 transition-all text-md text-black font-normal py-3 cursor-pointer capitalize font-poppins ">
-                {items}
-              </li>
-            </div>
+          <li
+            onClick={() => setSelectedCategory("All")}
+            className="py-3 cursor-pointer font-poppins hover:bg-gray-200"
+          >
+            All
+          </li>
+
+          {categoryData?.map((item, index) => (
+            <li
+              key={index}
+              onClick={() => setSelectedCategory(item)}
+              className="py-3 cursor-pointer capitalize font-poppins hover:bg-gray-200"
+            >
+              {item}
+            </li>
           ))}
         </ul>
       )}
-      <div className="">
-        <h1 className="text-[20px] font-bold font-poppins pt-10 cursor-pointer">
-          Shop by Color
-        </h1>
-        <ul className="pt-8">
-          <li className="  cursor-pointer hover:px-5 transition-all text-md text-black font-normal py-3 capitalize font-poppins ">
-            <div className="flex gap-3">
-              <span className="inline-block w-5 h-5 rounded-full bg-black"></span>
-              <p>Black</p>
-            </div>
-          </li>
-          <li className="  cursor-pointer hover:px-5 transition-all text-md text-black font-normal py-3 capitalize font-poppins ">
-            <div className="flex gap-3">
-              <span className="inline-block w-5 h-5 rounded-full bg-red-500"></span>
-              <p>Red</p>
-            </div>
-          </li>
-          <li className="  cursor-pointer hover:px-5 transition-all text-md text-black font-normal py-3 capitalize font-poppins ">
-            <div className="flex gap-3">
-              <span className="inline-block w-5 h-5 rounded-full bg-[#00FF38]"></span>
-              <p>Green</p>
-            </div>
-          </li>
-        </ul>
-      </div>
     </div>
   );
 };
