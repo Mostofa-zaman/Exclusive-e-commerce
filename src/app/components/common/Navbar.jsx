@@ -58,7 +58,7 @@ const Navbar = () => {
                   {item.icon}
 
                   {item.to === "/addtocart" && (
-                    <span className="absolute -top-1 -right-1 text-[10px] bg-black text-white rounded-full h-4 w-4 inline-flex items-center justify-center">
+                    <span className="absolute -top-0.5  text-[10px] bg-black text-white rounded-full h-4 w-4 inline-flex items-center justify-center">
                       2
                     </span>
                   )}
