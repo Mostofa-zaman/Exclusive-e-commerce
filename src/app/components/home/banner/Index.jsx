@@ -55,7 +55,6 @@ const Banner = () => {
                         src={imgSrc}
                         alt={`Banner ${idx + 1}`}
                         fill
-                      
                         className="rounded-md md:rounded-none"
                       />
                     </div>
