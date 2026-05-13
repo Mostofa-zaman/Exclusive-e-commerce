@@ -16,7 +16,7 @@ const FlashSale = () => {
         {/* Main Wrapper with adaptive padding & border */}
         <div className="flex flex-col border-b border-black/10 pb-10 sm:pb-14 md:pb-16 lg:pb-20">
           
-          {/* PRODUCT SECTION: Extra top margin for mobile clarity */}
+          {/* PRODUCT SECTION */}
           <div className="w-full">
             <ProductCommonLayout
               ProductCard={ProductCard}
@@ -31,10 +31,10 @@ const FlashSale = () => {
             />
           </div>
 
-          {/* VIEW ALL BUTTON SECTION: Responsive Width and Spacing */}
+          {/* VIEW ALL BUTTON SECTION */}
           <div className="flex justify-center items-center mt-6 sm:mt-10 md:mt-14 px-4">
-            <div className="w-full xs:w-auto min-w-[200px] sm:min-w-[234px]">
-              <Button className="w-full py-3.5 sm:py-4 text-sm sm:text-base font-medium rounded hover:bg-[#E04444] transition-all duration-300 active:scale-95">
+            <div className="w-[40px] xs:w-auto min-w-[20px] sm:min-w-[234px]">
+              <Button className="w-[40px] py-3.5 sm:py-4 text-sm sm:text-base font-medium rounded hover:bg-[#E04444] transition-all duration-300 active:scale-95">
                 View All Products
               </Button>
             </div>

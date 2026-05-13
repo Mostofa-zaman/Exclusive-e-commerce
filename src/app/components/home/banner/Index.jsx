@@ -55,7 +55,7 @@ const Banner = () => {
                         src={imgSrc}
                         alt={`Banner ${idx + 1}`}
                         fill
-                        style={{ objectFit: "cover" }}
+                      
                         className="rounded-md md:rounded-none"
                       />
                     </div>
