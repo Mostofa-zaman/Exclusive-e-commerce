@@ -6,93 +6,210 @@ import Heading from "../../common/Heading";
 import newArrivalLeftImage from "../../../assets/playstaatio.png";
 import womenCollection from "../../../assets/womenCollection.png";
 import spekar from "../../../assets/spekar.png";
-import perfume from "../../../assets/perfume.png"
+import perfume from "../../../assets/perfume.png";
 import Image from "next/image";
 
 const NewArrival = () => {
   return (
-    <div className="pt-10 pb-40">
+    <section className="pt-10 md:pt-14 lg:pt-20 pb-16 md:pb-24 lg:pb-40 overflow-hidden">
       <Container>
-       <div className="flex justify-center">
-         <Heading title={"Featured"} description={"New Arrival"} />
-       </div>
 
-        <div className="flex justify-between h-[600px] mt-[60px]">
-         <div className="w-[58%] bg-black relative h-full">
-            {/* Image */}
+        {/* HEADING */}
+        <div className="flex justify-center">
+          <Heading title={"Featured"} description={"New Arrival"} />
+        </div>
+
+        {/* MAIN GRID */}
+        <div
+          className="
+            mt-10 md:mt-14 lg:mt-[60px]
+
+            flex flex-col lg:flex-row
+            gap-4 md:gap-5 lg:gap-6
+          "
+        >
+
+          {/* LEFT BIG CARD */}
+          <div
+            className="
+              w-full lg:w-[58%]
+              bg-black
+              relative
+              overflow-hidden
+              rounded-md
+              min-h-[320px] sm:min-h-[420px] lg:min-h-[600px]
+            "
+          >
             <Image
               src={newArrivalLeftImage}
-              alt={newArrivalLeftImage}
-              className="w-full h-full rounded-sm"
+              alt="PlayStation 5"
+              className="w-full h-full object-cover"
             />
 
-            {/* Text Overlay */}
-            <div className="absolute inset-0 flex flex-col justify-end text-white p-6 pl-[32px] pb-[32px]">
-              <h1 className="text-[24px] font-semibold font-inter">PlayStation 5</h1>
-              <h3 className="text-[14px] font-normal font-poppins pt-[16px] pb-[16px] w-[250px]">
+            {/* Overlay */}
+            <div className="absolute inset-0 flex flex-col justify-end text-white p-5 sm:p-6 lg:p-8">
+              <h1 className="text-xl sm:text-2xl font-semibold font-inter">
+                PlayStation 5
+              </h1>
+
+              <h3
+                className="
+                  text-sm
+                  font-normal
+                  font-poppins
+                  pt-3 pb-3
+                  max-w-[250px]
+                "
+              >
                 Black and White version of the PS5 coming out on sale.
               </h3>
-              <a href="#" className="underline text-[16px] font-medium font-poppins ">
+
+              <a
+                href="#"
+                className="underline text-sm sm:text-base font-medium font-poppins"
+              >
                 Shop Now
               </a>
             </div>
           </div>
-           <div className="w-[40%]  bg-white flex flex-col items-start gap-y-[16px] ">
-            <div className="w-full h-1/2 relative rounded-sm">
+
+          {/* RIGHT SIDE */}
+          <div
+            className="
+              w-full lg:w-[40%]
+
+              flex flex-col
+              gap-4 md:gap-5 lg:gap-6
+            "
+          >
+
+            {/* WOMEN COLLECTION */}
+            <div
+              className="
+                relative
+                overflow-hidden
+                rounded-md
+
+                min-h-[250px]
+                sm:min-h-[320px]
+              "
+            >
               <Image
                 src={womenCollection}
-                alt={womenCollection}
-                className="w-full h-full object-cover rounded-sm"
+                alt="Women Collection"
+                className="w-full h-full object-cover"
               />
-                <div className="absolute inset-0 flex flex-col justify-end text-white p-6 pl-[32px] pb-[32px]">
-              <h1 className="text-[24px] font-semibold font-inter">Women’s Collections</h1>
-              <h3 className="text-[14px] font-normal font-poppins pt-[16px] pb-[16px] w-[230px]">
-              Featured woman collections that give you another vibe.
-              </h3>
-              <a href="#" className="underline text-[16px] font-medium font-poppins ">
-                Shop Now
-              </a>
-            </div>
+
+              <div className="absolute inset-0 flex flex-col justify-end text-white p-5 sm:p-6 lg:p-8">
+                <h1 className="text-xl sm:text-2xl font-semibold font-inter">
+                  Women’s Collections
+                </h1>
+
+                <h3
+                  className="
+                    text-sm
+                    font-normal
+                    font-poppins
+                    pt-3 pb-3
+                    max-w-[230px]
+                  "
+                >
+                  Featured woman collections that give you another vibe.
+                </h3>
+
+                <a
+                  href="#"
+                  className="underline text-sm sm:text-base font-medium font-poppins"
+                >
+                  Shop Now
+                </a>
+              </div>
             </div>
 
-            <div className="flex gap-x-[16px] h-[50%] w-full ">
-              <div className="w-1/2 bg-black relative h-full">
+            {/* BOTTOM 2 CARDS */}
+            <div className="flex gap-4 md:gap-5 lg:gap-6">
+
+              {/* SPEAKER */}
+              <div
+                className="
+                  w-1/2
+                  bg-black
+                  relative
+                  overflow-hidden
+                  rounded-md
+
+                  min-h-[180px]
+                  sm:min-h-[220px]
+                  md:min-h-[260px]
+                "
+              >
                 <Image
                   src={spekar}
-                  alt={spekar}
-                  className="w-[270px] h-[284px] object-cover p-4 rounded-sm"
+                  alt="Speaker"
+                  className="w-full h-full object-cover p-3 md:p-4"
                 />
-                  <div className="absolute inset-0 flex flex-col justify-end text-white p-6 pl-[32px] pb-[32px]">
-              <h1 className="text-[24px] font-semibold font-inter">Speakers</h1>
-              <h3 className="text-[14px] font-normal font-poppins pt-[8px] pb-[8px]">
-             Amazon wireless speakers
-              </h3>
-              <a href="#" className="underline text-[16px] font-medium font-poppins ">
-                Shop Now
-              </a>
-            </div>
+
+                <div className="absolute inset-0 flex flex-col justify-end text-white p-4 md:p-5 lg:p-6">
+                  <h1 className="text-lg sm:text-xl font-semibold font-inter">
+                    Speakers
+                  </h1>
+
+                  <h3 className="text-xs sm:text-sm font-normal font-poppins pt-2 pb-2">
+                    Amazon wireless speakers
+                  </h3>
+
+                  <a
+                    href="#"
+                    className="underline text-sm font-medium font-poppins"
+                  >
+                    Shop Now
+                  </a>
+                </div>
               </div>
-              <div className="w-1/2 bg-black relative h-full">
+
+              {/* PERFUME */}
+              <div
+                className="
+                  w-1/2
+                  bg-black
+                  relative
+                  overflow-hidden
+                  rounded-md
+
+                  min-h-[180px]
+                  sm:min-h-[220px]
+                  md:min-h-[260px]
+                "
+              >
                 <Image
                   src={perfume}
-                  alt={perfume}
-                  className="w-[270px] h-[284px] object-cover p-4 rounded-sm"
+                  alt="Perfume"
+                  className="w-full h-full object-cover p-3 md:p-4"
                 />
-                  <div className="absolute inset-0 flex flex-col justify-end text-white p-6 pl-[32px] pb-[32px]">
-              <h1 className="text-[24px] font-semibold font-inter">Perfume</h1>
-              <h3 className="text-[14px] font-normal font-poppins pt-[8px] pb-[8px] ">
-               GUCCI INTENSE OUD EDP
-              </h3>
-              <a href="#" className="underline text-[16px] font-medium font-poppins ">
-                Shop Now
-              </a>
-            </div>
+
+                <div className="absolute inset-0 flex flex-col justify-end text-white p-4 md:p-5 lg:p-6">
+                  <h1 className="text-lg sm:text-xl font-semibold font-inter">
+                    Perfume
+                  </h1>
+
+                  <h3 className="text-xs sm:text-sm font-normal font-poppins pt-2 pb-2">
+                    GUCCI INTENSE OUD EDP
+                  </h3>
+
+                  <a
+                    href="#"
+                    className="underline text-sm font-medium font-poppins"
+                  >
+                    Shop Now
+                  </a>
+                </div>
               </div>
+
             </div>
           </div>
         </div>
       </Container>
-    </div>
+    </section>
   );
 };
 
