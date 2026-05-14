@@ -12,11 +12,13 @@ const ProductPageRight = ({ selectedCategory }) => {
 
   const allProducts = data?.products || [];
 
-  const filtered =
-    selectedCategory !== "All"
+  // FILTER
+  const filteredProducts =
+    selectedCategory && selectedCategory !== "All"
       ? allProducts.filter(
           (item) =>
-            item.category?.toLowerCase() === selectedCategory?.toLowerCase()
+            item.category?.toLowerCase() ===
+            selectedCategory?.toLowerCase()
         )
       : allProducts;
 
@@ -24,64 +26,75 @@ const ProductPageRight = ({ selectedCategory }) => {
     setPage(1);
   }, [selectedCategory]);
 
-  const totalPages = Math.ceil(filtered.length / limit);
+  const totalPages = Math.ceil(filteredProducts.length / limit);
 
-  const start = (page - 1) * limit;
+  const startIndex = (page - 1) * limit;
 
-  const current = filtered.slice(start, start + limit);
+  const currentProducts = filteredProducts.slice(
+    startIndex,
+    startIndex + limit
+  );
 
   return (
-    <div>
+    <div className="w-full lg:w-[78%]">
 
-      {/* GRID */}
+      {/* PRODUCTS GRID */}
       {isLoading ? (
-        <p className="text-center py-10">Loading...</p>
+        <p className="text-center mt-10">Loading products...</p>
       ) : (
         <div
           className="
             grid
-            grid-cols-2
+            grid-cols-1
             sm:grid-cols-2
-            md:grid-cols-3
             lg:grid-cols-3
-            gap-4 md:gap-6
+            gap-5 md:gap-6 lg:gap-8
+            mt-6
           "
         >
-          {current.map((item) => (
-            <ProductCart key={item.id} itemData={item} />
+          {currentProducts?.map((item) => (
+            <div key={item.id}>
+              <ProductCart itemData={item} />
+            </div>
           ))}
         </div>
       )}
 
       {/* PAGINATION */}
-      <div className="flex justify-center mt-10 flex-wrap gap-2">
+      <div className="flex justify-center mt-10">
 
-        <button
-          onClick={() => setPage((p) => Math.max(p - 1, 1))}
-          className="px-3 py-2 border"
-        >
-          Prev
-        </button>
+        <div className="flex flex-wrap justify-center gap-2">
 
-        {Array.from({ length: totalPages }).map((_, i) => (
           <button
-            key={i}
-            onClick={() => setPage(i + 1)}
-            className={`px-3 py-2 border ${
-              page === i + 1 ? "bg-black text-white" : ""
-            }`}
+            onClick={() => setPage((p) => Math.max(p - 1, 1))}
+            className="px-3 md:px-4 py-2 border text-sm md:text-base"
           >
-            {i + 1}
+            Prev
           </button>
-        ))}
 
-        <button
-          onClick={() => setPage((p) => Math.min(p + 1, totalPages))}
-          className="px-3 py-2 border"
-        >
-          Next
-        </button>
+          {Array.from({ length: totalPages }).map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setPage(i + 1)}
+              className={`
+                px-3 md:px-4 py-2 border text-sm md:text-base
+                ${page === i + 1 ? "bg-black text-white" : ""}
+              `}
+            >
+              {i + 1}
+            </button>
+          ))}
 
+          <button
+            onClick={() =>
+              setPage((p) => Math.min(p + 1, totalPages))
+            }
+            className="px-3 md:px-4 py-2 border text-sm md:text-base"
+          >
+            Next
+          </button>
+
+        </div>
       </div>
 
     </div>
