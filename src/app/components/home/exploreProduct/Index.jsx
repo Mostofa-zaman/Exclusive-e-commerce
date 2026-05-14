@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from "react";
@@ -10,23 +9,54 @@ import Button from "../../common/Button";
 
 const ExploreProduct = () => {
   const { data, error, isLoading } = useGetAllProductQuery();
+
   return (
-    <Container>
-      <div className="flex flex-col items-center border-b-[1px] border-b-black mb-10">
-        <ProductCommonLayout
-          ProductCard={ProductCard}
-          heading="Our Products"
-          description="Explore Our Products"
-          isArrowsTrue={true}
-          componentData={data?.products}
-          rows={2}
-          isLoading={isLoading}
-        />
-        <div className="pb-20  mx-auto  w-58.5  ">
-          <Button children={"View All Products"} />
+    <section className="w-full overflow-hidden">
+      <Container>
+        <div className="flex flex-col items-center border-b border-black/10 mb-10 md:mb-14 lg:mb-16">
+
+          <div className="w-full">
+            <ProductCommonLayout
+              ProductCard={ProductCard}
+              heading="Our Products"
+              description="Explore Our Products"
+              isArrowsTrue={true}
+              componentData={data?.products}
+              rows={2}
+              isLoading={isLoading}
+            />
+          </div>
+
+          {/* BUTTON */}
+          <div
+            className="
+              w-full
+              flex
+              justify-center
+              items-center
+
+              pt-6 md:pt-8 lg:pt-10
+              pb-10 md:pb-14 lg:pb-20
+
+              px-4
+            "
+          >
+            <div
+              className="
+                w-full
+                sm:w-auto
+
+                max-w-[280px]
+                sm:max-w-none
+              "
+            >
+              <Button children={"View All Products"} />
+            </div>
+          </div>
+
         </div>
-      </div>
-    </Container>
+      </Container>
+    </section>
   );
 };
 
