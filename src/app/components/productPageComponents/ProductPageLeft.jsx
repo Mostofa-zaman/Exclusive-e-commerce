@@ -8,71 +8,46 @@ const ProductPageLeft = ({
   setSelectedCategory,
 }) => {
   return (
-    <div
-      className="
-        w-full
-        md:w-[35%]
-        lg:w-[20%]
-      "
-    >
+    <div className="bg-white border rounded-md p-4">
+
       {/* TITLE */}
-      <h1 className="text-lg md:text-xl font-bold font-poppins pt-6 md:pt-10">
-        Shop by Category
+      <h1 className="text-lg font-semibold font-poppins mb-4">
+        Categories
       </h1>
 
-      {/* LOADING */}
+      {/* LIST */}
       {isLoading ? (
-        <ul className="pt-6 md:pt-8 space-y-3">
-          {Array(8)
-            .fill("")
-            .map((_, index) => (
-              <li
-                key={index}
-                className="animate-pulse bg-gray-300 h-6 rounded"
-              ></li>
-            ))}
+        <ul className="space-y-2">
+          {Array(8).fill("").map((_, i) => (
+            <li
+              key={i}
+              className="h-5 bg-gray-200 animate-pulse rounded"
+            />
+          ))}
         </ul>
       ) : (
-        /* CATEGORY LIST */
-        <ul className="pt-6 md:pt-8 space-y-1">
+        <ul className="space-y-1 max-h-[70vh] overflow-y-auto pr-2">
 
-          {/* ALL */}
           <li
             onClick={() => setSelectedCategory("All")}
-            className="
-              py-2 md:py-3
-              px-2
-              cursor-pointer
-              font-poppins
-              hover:bg-gray-200
-              rounded
-              transition
-            "
+            className="cursor-pointer px-2 py-2 rounded hover:bg-gray-100 transition"
           >
-            All
+            All Products
           </li>
 
-          {/* DYNAMIC CATEGORIES */}
-          {categoryData?.map((item, index) => (
+          {categoryData?.map((item, i) => (
             <li
-              key={index}
+              key={i}
               onClick={() => setSelectedCategory(item)}
-              className="
-                py-2 md:py-3
-                px-2
-                cursor-pointer
-                capitalize
-                font-poppins
-                hover:bg-gray-200
-                rounded
-                transition
-              "
+              className="cursor-pointer px-2 py-2 rounded hover:bg-gray-100 capitalize transition"
             >
               {item}
             </li>
           ))}
+
         </ul>
       )}
+
     </div>
   );
 };
