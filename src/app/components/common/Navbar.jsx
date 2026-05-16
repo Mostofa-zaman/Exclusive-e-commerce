@@ -24,7 +24,7 @@ const Navbar = () => {
             {menuItems.map((item) => (
               <li
                 key={item.id}
-             className="relative cursor-pointer py-[2px] overflow-hidden after:absolute after:content-[''] after:h-[2px] after:w-full after:bg-gray-300 after:bottom-0 after:-left-full hover:after:left-0 after:transition-all after:duration-300"
+             className="relative cursor-pointer py-[2px] overflow-hidden after:absolute after:content-[''] after:h-[2px] after:w-full after:bg-gray-500 after:bottom-0 after:-left-full hover:after:left-0 after:transition-all after:duration-300"
               >
                 <Link href={item.path} className="text-sm lg:text-base">
                   {item.name}
