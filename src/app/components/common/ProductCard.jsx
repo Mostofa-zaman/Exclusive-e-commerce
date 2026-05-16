@@ -24,11 +24,11 @@ const ProductCard = ({ itemData }) => {
 
         {/* Action Buttons */}
         <div className="flex h-fit flex-col absolute right-2 top-2 md:right-[17px] md:top-[17px] gap-y-2">
-          <button className="bg-primary p-2 md:p-[10px] inline-flex rounded-full cursor-pointer text-base md:text-xl">
+          <button className="bg-primary p-2 md:p-[10px] inline-flex rounded-full hover:bg-gray-300 cursor-pointer text-base md:text-xl">
             {navIcon[0].icon}
           </button>
 
-          <button className="bg-primary p-2 md:p-[10px] inline-flex rounded-full cursor-pointer text-base md:text-xl">
+          <button className="bg-primary p-2 md:p-[10px] inline-flex rounded-full hover:bg-gray-300 cursor-pointer text-base md:text-xl">
             {eye}
           </button>
         </div>
