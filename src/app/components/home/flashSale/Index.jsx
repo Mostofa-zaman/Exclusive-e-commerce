@@ -32,13 +32,27 @@ const FlashSale = () => {
           </div>
 
           {/* VIEW ALL BUTTON SECTION */}
-          <div className="flex justify-center items-center mt-6 sm:mt-10 md:mt-14 px-4">
-            <div className="w-[40px] xs:w-auto min-w-[20px] sm:min-w-[234px]">
-              <Button className="w-[40px] py-3.5 sm:py-4 text-sm sm:text-base font-medium rounded hover:bg-[#E04444] transition-all duration-300 active:scale-95">
-                View All Products
-              </Button>
-            </div>
-          </div>
+         <div className="flex justify-center items-center mt-6 sm:mt-10 md:mt-14 px-4">
+  <div className="w-full sm:w-auto flex justify-center">
+    <Button
+      className="
+        w-full
+        sm:w-auto
+        py-3 sm:py-4
+        px-6 sm:px-12
+        text-sm sm:text-base
+        font-medium
+        rounded
+        hover:bg-[#E04444]
+        transition-all
+        duration-300
+        active:scale-95
+      "
+    >
+      View All Products
+    </Button>
+  </div>
+</div>
 
         </div>
       </Container>
