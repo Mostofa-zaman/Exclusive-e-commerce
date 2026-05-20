@@ -48,13 +48,13 @@ const Footer = () => {
 
           {/* ACCOUNT */}
           <div>
-            <p className="text-lg font-medium mb-4">
+            <p className="text-lg font-medium mb-4 hover:text-green-500">
               {footerLinks[0].title}
             </p>
 
             <ul className="space-y-2 text-sm text-gray-300">
               {footerLinks[0].links.map((item) => (
-                <li key={item.label} className="hover:text-white cursor-pointer">
+                <li key={item.label} className="hover:text-blue-500 cursor-pointer">
                   {item.label}
                 </li>
               ))}
@@ -74,7 +74,7 @@ const Footer = () => {
 
           {/* QUICK LINKS */}
           <div>
-            <p className="text-lg font-medium mb-4">
+            <p className="text-lg font-medium mb-4 hover:text-orange-300">
               {footerLinks[1].title}
             </p>
 
