@@ -80,7 +80,7 @@ const Footer = () => {
 
             <ul className="space-y-2 text-sm text-gray-300">
               {footerLinks[1].links.map((item) => (
-                <li key={item.label} className="hover:text-white cursor-pointer">
+                <li key={item.label} className="hover:text-red-500 cursor-pointer">
                   {item.label}
                 </li>
               ))}
