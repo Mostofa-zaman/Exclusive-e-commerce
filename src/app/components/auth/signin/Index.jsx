@@ -28,7 +28,7 @@ const SignIn = () => {
 //   });
 
   //for login data
-//   const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => console.log(data);
 
   return (
     <section className="relative overflow-hidden lg:pt-[60px] lg:pb-[140px]">
@@ -62,7 +62,7 @@ const SignIn = () => {
           <div className="w-full flex justify-center lg:justify-end">
             <form
               className="w-full max-w-[371px]"
-            //   onSubmit={handleSubmit(onSubmit)}
+              onSubmit={handleSubmit(onSubmit)}
             >
               <h4 className="text-text2 heading36PXMedium">
                 Log in to Exclusive
