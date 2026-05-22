@@ -4,28 +4,30 @@ import React from "react";
 import Container from "../../common/Container";
 import allImages from "../../../helpers/imageProvider";
 import Button from "../../common/Button";
-
+import { z } from "zod";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 
 // for auth schema
 
-// const signInSchema = z.object({
-//   email: z.string().email("Invalid email address"),
-//   password: z.string().min(6, "Password must be at least 6 characters"),
-// });
+const signInSchema = z.object({
+  email: z.string().email("Invalid email address"),
+  password: z.string().min(6, "Password must be at least 6 characters"),
+});
 
 const SignIn = () => {
   // for icon images
   const { authImage } = allImages;
 
   // for react hook form
-//   const {
-//     register,
-//     handleSubmit,
-//     formState: { errors },
-//   } = useForm({
-//     resolver: zodResolver(signInSchema),
-//   });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: zodResolver(signInSchema),
+  });
 
   //for login data
   const onSubmit = (data) => console.log(data);
@@ -74,7 +76,7 @@ const SignIn = () => {
 
               <div className="flex flex-col gap-y-10">
                 <div>
-                  {/* <input
+                  <input
                     type="email"
                     placeholder="Email"
                     className="placeholder:text-[#00000051] title16PXRegular text-[#00000051] border-b-2 border-[#00000030] py-2 w-full"
@@ -85,11 +87,11 @@ const SignIn = () => {
                     <p className="text-red-500 title16PXRegular mt-2">
                       {errors.email.message}
                     </p>
-                  )} */}
+                  )}
                 </div>
 
                 <div>
-                  {/* <input
+                  <input
                     type="password"
                     placeholder="Password"
                     className="placeholder:text-[#00000051] title16PXRegular text-[#00000051] border-b-2 border-[#00000030] py-2 w-full"
@@ -100,7 +102,7 @@ const SignIn = () => {
                     <p className="text-red-500 title16PXRegular mt-2">
                       {errors.password.message}
                     </p>
-                  )} */}
+                  )}
                 </div>
               </div>
 
