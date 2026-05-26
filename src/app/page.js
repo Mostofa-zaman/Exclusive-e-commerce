@@ -21,7 +21,7 @@ export default function Home() {
     <ExploreProduct/>
     <NewArrival/>
     <CustomerService/>
-    <SignIn/>
+  
    
   </>
   );

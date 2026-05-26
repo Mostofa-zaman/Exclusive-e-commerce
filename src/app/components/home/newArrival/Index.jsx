@@ -37,7 +37,7 @@ const NewArrival = () => {
               relative
               overflow-hidden
               rounded-md
-              min-h-[320px] sm:min-h-[420px] lg:min-h-[600px]
+              min-h-[320px] sm:min-h-[420px] h-[635px]
             "
           >
             <Image
