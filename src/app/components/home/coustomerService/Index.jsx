@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from "react";
@@ -6,105 +7,87 @@ import { FaCheck } from "react-icons/fa";
 import { TfiHeadphoneAlt } from "react-icons/tfi";
 import { TbTruckDelivery } from "react-icons/tb";
 
+const services = [
+  {
+    id: 1,
+    icon: TbTruckDelivery,
+    title: "FREE AND FAST DELIVERY",
+    description: "Free delivery for all orders over $140",
+  },
+  {
+    id: 2,
+    icon: TfiHeadphoneAlt,
+    title: "24/7 CUSTOMER SERVICE",
+    description: "Friendly 24/7 customer support",
+  },
+  {
+    id: 3,
+    icon: FaCheck,
+    title: "MONEY BACK GUARANTEE",
+    description: "We return money within 30 days",
+  },
+];
+
 const CustomerService = () => {
-  const service = [
-    {
-      id: 1,
-      icon: (
-        <TbTruckDelivery className="text-3xl md:text-4xl text-white bg-black w-[60px] h-[60px] md:w-[70px] md:h-[70px] rounded-full p-3" />
-      ),
-      tittle: "FREE AND FAST DELIVERY",
-      description: "Free delivery for all orders over $140",
-    },
-    {
-      id: 2,
-      icon: (
-        <TfiHeadphoneAlt className="text-3xl md:text-4xl text-white bg-black w-[60px] h-[60px] md:w-[70px] md:h-[70px] rounded-full p-3" />
-      ),
-      tittle: "24/7 CUSTOMER SERVICE",
-      description: "Friendly 24/7 customer support",
-    },
-    {
-      id: 3,
-      icon: (
-        <FaCheck className="text-3xl md:text-4xl text-white bg-black w-[60px] h-[60px] md:w-[70px] md:h-[70px] rounded-full p-3" />
-      ),
-      tittle: "MONEY BACK GUARANTEE",
-      description: "We return money within 30 days",
-    },
-  ];
-
   return (
-    <section className="pb-16 md:pb-24 lg:pb-[140px] overflow-hidden">
+    <section className="pb-16 md:pb-24 lg:pb-[140px]">
       <Container>
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+          {services.map((item) => {
+            const Icon = item.icon;
 
-        <div
-          className="
-            grid
-            grid-cols-1
-            sm:grid-cols-2
-            lg:grid-cols-3
-
-            gap-8 md:gap-10 lg:gap-6
-          "
-        >
-
-          {service?.map((item) => (
-            <div
-              key={item.id}
-              className="
-                flex flex-col
-                justify-center
-                items-center
-                text-center
-
-                px-4
-              "
-            >
-
-              {/* ICON */}
-              <span className="inline-flex rounded-full p-2 md:p-3 bg-[rgb(47,46,48,0.3)]">
-                {item.icon}
-              </span>
-
-              {/* TITLE */}
-              <h1
+            return (
+              <div
+                key={item.id}
                 className="
-                  text-base sm:text-lg lg:text-[20px]
-                  font-semibold
-                  font-poppins
-
-                  pt-5 md:pt-6
-                  pb-2
-
-                  leading-snug
+                  group flex flex-col items-center text-center
+                  px-4 transition-all duration-300
                 "
               >
-                {item.tittle}
-              </h1>
+                {/* Icon */}
+                <div className="mb-6 inline-flex rounded-full bg-[rgba(47,46,48,0.3)] p-3">
+                  <Icon
+                    className="
+                      h-[60px] w-[60px]
+                      rounded-full bg-black p-3 text-white
+                      transition-transform duration-300
+                      group-hover:scale-110
+                      md:h-[70px] md:w-[70px]
+                    "
+                  />
+                </div>
 
-              {/* DESCRIPTION */}
-              <h3
-                className="
-                  text-sm md:text-[14px]
-                  font-normal
-                  font-poppins
+                {/* Title */}
+                <h2
+                  className="
+                    mb-2
+                    text-base font-semibold
+                    leading-snug
+                    sm:text-lg
+                    lg:text-xl
+                  "
+                >
+                  {item.title}
+                </h2>
 
-                  leading-relaxed
-                  max-w-[280px]
-                "
-              >
-                {item.description}
-              </h3>
-
-            </div>
-          ))}
-
+                {/* Description */}
+                <p
+                  className="
+                    max-w-[280px]
+                    text-sm text-gray-600
+                    leading-relaxed
+                  "
+                >
+                  {item.description}
+                </p>
+              </div>
+            );
+          })}
         </div>
-
       </Container>
     </section>
   );
 };
 
 export default CustomerService;
+
