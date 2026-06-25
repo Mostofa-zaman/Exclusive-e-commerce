@@ -7,7 +7,7 @@ import ExploreProduct from "./components/home/exploreProduct/Index";
 import Experience from "./components/home/experience/Index";
 import NewArrival from "./components/home/newArrival/Index";
 import CustomerService from "./components/home/coustomerService/Index";
-import SignIn from "./components/auth/signin/Index";
+
 
 export default function Home() {
   return (
@@ -21,7 +21,7 @@ export default function Home() {
     <ExploreProduct/>
     <NewArrival/>
     <CustomerService/>
-  
+ 
    
   </>
   );
